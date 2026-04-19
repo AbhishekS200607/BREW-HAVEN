@@ -52,7 +52,7 @@ a { text-decoration: none; color: inherit; }
 .hamburger { display: none; }
 
 /* ===== HERO ===== */
-.hero { height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; overflow: visible !important; }
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 0 60px; position: relative; overflow: visible !important; }
 .hero-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; overflow: visible !important; }
 .hero-content { flex: 1.2; z-index: 10; text-align: left; }
 .hero-title { font-family: var(--font-serif); font-size: 5.5rem; line-height: 1; margin-bottom: 30px; font-weight: 800; }
@@ -110,12 +110,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== SECTIONS ===== */
-.category-tabs { padding: 60px 0 30px; text-align: center; }
+.category-tabs { padding: 40px 0 20px; text-align: center; }
 .menu-tabs { display: flex; justify-content: center; gap: 15px; }
 .tab-btn { padding: 12px 35px; border: none; background: transparent; color: var(--gray); border-radius: 35px; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
 .tab-btn.active { background-color: var(--white); color: var(--dark-bg); }
 
-.menu-section { padding-bottom: 100px; }
+.menu-section { padding-bottom: 60px; }
 .menu-carousel { display: flex; align-items: center; justify-content: center; gap: 30px; }
 .carousel-items { display: flex; gap: 25px; align-items: flex-end; }
 .menu-card { width: 270px; padding: 40px 25px; border-radius: 30px; text-align: center; background-color: #1e3932; position: relative; transition: 0.4s; }
@@ -123,8 +123,8 @@ a { text-decoration: none; color: inherit; }
 .card-tag { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); font-size: 0.6rem; font-weight: 800; background: var(--white); color: var(--dark-bg); padding: 4px 12px; border-radius: 20px; }
 
 /* ===== PERFECTION SECTION (GRID STACKING) ===== */
-.perfection-section { padding: 120px 0 0; text-align: center; position: relative; overflow: visible; }
-.section-header { max-width: 600px; margin: 0 auto 60px; }
+.perfection-section { padding: 60px 0 0; text-align: center; position: relative; overflow: visible; }
+.section-header { max-width: 600px; margin: 0 auto 40px; }
 .tagline { font-size: 0.9rem; letter-spacing: 5px; color: var(--gold); }
 .title { font-family: var(--font-serif); font-size: 4.5rem; margin-bottom: 20px; }
 
@@ -133,7 +133,7 @@ a { text-decoration: none; color: inherit; }
   place-items: center; 
   position: relative; 
   width: 100%; 
-  margin: 60px 0; 
+  margin: 30px 0; 
 }
 
 /* Background Marquee */
@@ -147,7 +147,7 @@ a { text-decoration: none; color: inherit; }
   padding: 15px 0; 
   z-index: 1; 
   overflow: hidden; 
-  margin: 60px 0;
+  margin: 30px 0;
 }
 .marquee-track { display: flex; white-space: nowrap; animation: continuous-scroll 40s linear infinite; }
 .marquee-track span { font-size: 2rem; font-weight: 900; margin-right: 60px; letter-spacing: 6px; }
@@ -162,13 +162,13 @@ a { text-decoration: none; color: inherit; }
 }
 .perfection-cup-container img { width: 450px; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6)); }
 
-.perfection-footer { position: relative; height: 120px; }
+.perfection-footer { position: relative; height: 100px; }
 .perfection-side-text { position: absolute; right: 0; bottom: 0; text-align: right; max-width: 220px; z-index: 10; }
 .swirl { width: 180px; opacity: 0.8; margin-top: 10px; }
 
 /* ===== POPULAR SECTION ===== */
-.popular-section { padding: 150px 0; text-align: center; }
-.section-title { font-size: 1.1rem; letter-spacing: 6px; margin-bottom: 80px; color: var(--gold); }
+.popular-section { padding: 80px 0; text-align: center; }
+.section-title { font-size: 1.1rem; letter-spacing: 6px; margin-bottom: 60px; color: var(--gold); }
 .popular-grid { display: flex; justify-content: center; gap: 40px; }
 .popular-card { width: 300px; background-color: var(--dark-bg); border-radius: 30px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
 .card-header { height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 30px 30px 150px 150px; margin: 8px; position: relative; }
@@ -181,8 +181,8 @@ a { text-decoration: none; color: inherit; }
 .card-body h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 20px; }
 
 /* ===== LOCATIONS SECTION ===== */
-.locations-section { padding: 120px 0; background-color: var(--dark-bg); position: relative; }
-.locations-inner { display: flex; gap: 80px; align-items: flex-start; margin-bottom: 60px; }
+.locations-section { padding: 80px 0; background-color: var(--dark-bg); position: relative; }
+.locations-inner { display: flex; gap: 80px; align-items: flex-start; margin-bottom: 40px; }
 .vertical-label { writing-mode: vertical-lr; transform: rotate(180deg); font-size: 1.5rem; font-weight: 800; letter-spacing: 8px; color: var(--white); padding-top: 20px; }
 .locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; }
 .location-card { display: flex; align-items: center; gap: 25px; }
@@ -193,12 +193,12 @@ a { text-decoration: none; color: inherit; }
 .loc-info span { font-size: 0.85rem; color: var(--gray); font-weight: 500; }
 .view-all { text-align: center; margin-top: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 4px; text-decoration: underline; cursor: pointer; color: var(--gold); }
 
-.marquee-gold-wrap { width: 120vw; position: relative; left: 50%; right: 50%; margin-left: -60vw; margin-right: -60vw; background-color: var(--gold); transform: rotate(-3deg); padding: 15px 0; overflow: hidden; margin-top: 60px; }
+.marquee-gold-wrap { width: 120vw; position: relative; left: 50%; right: 50%; margin-left: -60vw; margin-right: -60vw; background-color: var(--gold); transform: rotate(-3deg); padding: 15px 0; overflow: hidden; margin-top: 40px; }
 .marquee-gold-wrap span { color: var(--dark-bg); font-weight: 900; font-size: 2rem; }
 
 /* ===== FOOTER ===== */
-.footer { padding: 120px 0 60px; background: #000f0c; }
-.footer-top { display: flex; justify-content: space-between; gap: 100px; margin-bottom: 100px; }
+.footer { padding: 80px 0 40px; background: #000f0c; }
+.footer-top { display: flex; justify-content: space-between; gap: 100px; margin-bottom: 60px; }
 .contact-box { flex: 1; text-align: left; }
 .contact-form { display: flex; flex-direction: column; gap: 20px; }
 .contact-form input, .contact-form textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; color: var(--white); outline: none; font-size: 0.85rem; }

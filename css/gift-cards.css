@@ -206,7 +206,7 @@
 .gc-section-header { text-align: center; margin-bottom: 60px; }
 
 /* BUY SECTION */
-.gc-buy { padding: 120px 0; }
+.gc-buy { padding: 80px 0; }
 
 .gc-buy-layout {
   display: grid;
@@ -343,7 +343,7 @@
 .gc-checkout-btn:hover { background: #00a862; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,98,65,0.4); }
 
 /* DESIGNS */
-.gc-designs { padding: 100px 0; background: #011a13; }
+.gc-designs { padding: 60px 0; background: #011a13; }
 .gc-designs-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
 .gc-design-item {
   display: flex;
@@ -357,7 +357,7 @@
 .gc-design-item.selected .gc-card-preview { box-shadow: 0 0 0 3px var(--gold), 0 20px 50px rgba(0,0,0,0.4); }
 
 /* REDEEM */
-.gc-redeem { padding: 120px 0; }
+.gc-redeem { padding: 80px 0; }
 .gc-redeem-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -380,7 +380,7 @@
 .gc-balance-value { font-family: var(--font-serif); font-size: 2rem; color: var(--gold); font-weight: 700; }
 
 /* HOW IT WORKS */
-.gc-how { padding: 120px 0; background: #011a13; }
+.gc-how { padding: 80px 0; background: #011a13; }
 .gc-steps {
   display: flex;
   align-items: center;
@@ -424,7 +424,7 @@
 .gc-step-divider { font-size: 1.5rem; color: rgba(255,255,255,0.15); font-weight: 300; }
 
 /* FAQ */
-.gc-faq { padding: 100px 0; }
+.gc-faq { padding: 60px 0; }
 .gc-faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px; }
 .gc-faq-item {
   border-bottom: 1px solid rgba(255,255,255,0.07);
