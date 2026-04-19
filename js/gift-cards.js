@@ -46,10 +46,10 @@ const customInput = document.querySelector('.gc-custom-input input');
 if (customInput) {
   customInput.addEventListener('input', () => {
     const val = customInput.value;
-    if (val && parseInt(val) >= 5) {
+    if (val && parseInt(val) >= 100) {
       amountBtns.forEach(b => b.classList.remove('active'));
-      if (previewAmount) previewAmount.textContent = `$${val}`;
-      if (checkoutBtn) checkoutBtn.textContent = `ADD TO CART — $${val}`;
+      if (previewAmount) previewAmount.textContent = `₹${val}`;
+      if (checkoutBtn) checkoutBtn.textContent = `ADD TO CART — ₹${val}`;
     }
   });
 }
@@ -104,7 +104,7 @@ if (checkBalanceBtn && balanceValue) {
     const cardNum = document.querySelector('.gc-redeem-form input[placeholder*="XXXX"]').value;
     const pin = document.querySelector('.gc-redeem-form input[placeholder*="PIN"]').value;
     if (cardNum && pin) {
-      balanceValue.textContent = '$42.50';
+      balanceValue.textContent = '₹3500.00';
       gsap.from(balanceValue, { scale: 0.5, opacity: 0, duration: 0.5, ease: 'back.out(1.7)' });
     } else {
       balanceValue.textContent = 'Enter card details';

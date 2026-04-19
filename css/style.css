@@ -117,6 +117,26 @@ a { text-decoration: none; color: inherit; }
 
 .menu-section { padding-bottom: 60px; }
 .menu-carousel { display: flex; align-items: center; justify-content: center; gap: 30px; }
+.carousel-nav {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  z-index: 10;
+  flex-shrink: 0;
+}
+.carousel-nav:hover {
+  background: var(--gold);
+  color: var(--dark-bg);
+}
 .carousel-items { display: flex; gap: 25px; align-items: flex-end; }
 .menu-card { width: 270px; padding: 40px 25px; border-radius: 30px; text-align: center; background-color: #1e3932; position: relative; transition: 0.4s; }
 .menu-card.active { transform: scale(1.08); box-shadow: 0 20px 40px rgba(0,0,0,0.3); background-color: #006241; }
@@ -212,6 +232,9 @@ a { text-decoration: none; color: inherit; }
 .footer-bottom { display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 60px; align-items: flex-start; }
 .footer-legal { display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.4; margin-top: 40px; }
 .footer-legal .links { display: flex; gap: 30px; }
+
+/* Price Styling */
+.price { font-weight: 800; color: var(--gold); font-size: 1.1rem; display: block; margin-bottom: 15px; }
 
 /* ===== MOBILE QUERIES ===== */
 @media (max-width: 1024px) {

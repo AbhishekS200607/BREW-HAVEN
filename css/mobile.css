@@ -1,0 +1,354 @@
+/* Mobile-specific overrides for Brew Haven */
+
+.mobile-ui {
+    font-size: 14px;
+}
+
+.mobile-ui .container {
+    padding: 0 15px;
+}
+
+/* Header Adjustments - Rounded Nav Bar in Mobile View */
+.mobile-ui .header {
+    padding: 8px 0;
+    background: rgba(1, 31, 24, 0.95);
+}
+
+.mobile-ui .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.mobile-ui .logo img {
+    width: 30px !important;
+}
+
+.mobile-ui .logo-text-group {
+    display: none; /* Hide logo text on mobile to save space */
+}
+
+.mobile-ui .nav-pill {
+    display: block !important;
+    flex: 1;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.mobile-ui .nav-pill::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-ui .nav-pill ul {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: 25px;
+    gap: 5px;
+    width: max-content;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-ui .nav-pill a {
+    font-size: 0.65rem;
+    padding: 4px 6px;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+}
+
+.mobile-ui .nav-pill li.active-pill a {
+    padding: 4px 10px;
+}
+
+.mobile-ui .header-icons {
+    display: flex !important;
+    gap: 12px;
+}
+
+.mobile-ui .header-icons img {
+    width: 18px !important;
+}
+
+.mobile-ui .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-ui .hamburger {
+    display: none !important; /* Hide hamburger as we use the pill nav */
+}
+
+
+/* Hero Section */
+.mobile-ui .hero {
+    padding-top: 100px;
+    text-align: center;
+    min-height: auto;
+}
+
+.mobile-ui .hero-inner {
+    flex-direction: column;
+}
+
+.mobile-ui .hero-title {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.mobile-ui .hero-product-info p {
+    margin: 0 auto 30px;
+}
+
+.mobile-ui .hero-visual-stack {
+    height: auto;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.mobile-ui .main-frapp {
+    max-width: 300px;
+    height: auto;
+}
+
+.mobile-ui .vertical-text-solid {
+    display: flex !important;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    padding: 10px 0;
+    margin-top: 15px;
+    width: 100%;
+    opacity: 1 !important; /* Force full opacity on mobile */
+    color: var(--gold) !important;
+}
+
+.mobile-ui .vertical-text-solid .main-label,
+.mobile-ui .vertical-text-solid .sub-label {
+    color: var(--gold) !important;
+    opacity: 1 !important;
+}
+
+.mobile-ui .vertical-text-solid .main-label {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.mobile-ui .vertical-text-solid .sub-label {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+}
+
+.mobile-ui .hero-product-info h3 {
+    color: var(--gold);
+}
+
+
+.mobile-ui .hero-thumbs-pill {
+    margin: 30px auto 0;
+}
+
+/* Menu Section */
+.mobile-ui .popular-grid {
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-ui .popular-card {
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Locations */
+.mobile-ui .locations-inner {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mobile-ui .locations-grid {
+    grid-template-columns: 1fr;
+}
+
+.mobile-ui .vertical-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 1.8rem;
+    text-align: center;
+    padding-top: 0;
+}
+
+/* Perfection Section */
+.mobile-ui .perfection-cup-container img {
+    width: 280px;
+}
+
+.mobile-ui .title {
+    font-size: 2.8rem;
+}
+
+.mobile-ui .perfection-side-text {
+    position: static;
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* Background Adjustments */
+.mobile-ui .floating-beans {
+    display: none !important;
+}
+
+/* Category Tabs UX Enhancement */
+.mobile-ui .category-tabs {
+    padding: 20px 0 10px;
+}
+.mobile-ui .menu-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.mobile-ui .tab-btn {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    border-radius: 20px;
+}
+.mobile-ui .tab-btn.active {
+    background: var(--white);
+    color: var(--dark-bg);
+}
+
+/* Menu Carousel UX Enhancement - Horizontal Snap Scroll */
+.mobile-ui .menu-section {
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+.mobile-ui .menu-carousel {
+    flex-direction: column;
+    padding: 0;
+}
+.mobile-ui .carousel-nav {
+    display: none !important; /* Hidden on mobile because we use snap-scroll */
+}
+.mobile-ui .carousel-items {
+    display: flex;
+    grid-template-columns: none; /* Disable grid */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 15px;
+    width: 100%;
+    scrollbar-width: none;
+}
+.mobile-ui .menu-card {
+    flex: 0 0 80%; /* Peek effect: show 80% of card */
+    width: 80%;
+    scroll-snap-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(145deg, #1e3932, #0d1a15);
+    border: 1px solid rgba(255,255,255,0.05);
+    transform: none !important; /* Remove desktop scale */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+.mobile-ui .menu-card.active {
+    background: linear-gradient(145deg, #006241, #1e3932);
+    border-color: rgba(255,255,255,0.1);
+}
+.mobile-ui .menu-card img {
+    width: 140px;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
+.mobile-ui .menu-card h4 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+.mobile-ui .card-desc {
+    display: block; /* Show description again but keep it concise */
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+.mobile-ui .card-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.8rem;
+    border-radius: 15px;
+}
+
+/* Gift Card Page Specifics */
+.mobile-ui .gc-hero {
+    padding-top: 80px;
+    text-align: center;
+}
+.mobile-ui .gc-hero-inner {
+    flex-direction: column;
+}
+.mobile-ui .gc-hero-cards {
+    height: 220px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+.mobile-ui .gc-card-preview {
+    width: 220px !important;
+    height: 135px !important;
+    padding: 15px 20px !important;
+}
+.mobile-ui .gc-card-amount {
+    font-size: 2rem !important;
+}
+.mobile-ui .gc-hero-cards .gc-card-preview:nth-child(1) {
+    transform: rotate(-8deg) translate(-40px, 10px) scale(0.9);
+}
+.mobile-ui .gc-hero-cards .gc-card-preview:nth-child(2) {
+    transform: rotate(3deg) translate(0, -5px) scale(0.9);
+}
+.mobile-ui .gc-hero-cards .gc-card-preview:nth-child(3) {
+    transform: rotate(12deg) translate(40px, 15px) scale(0.9);
+}
+
+.mobile-ui .gc-marquee-wrap {
+    margin: 40px -20px 20px;
+    transform: rotate(-1deg);
+    padding: 8px 0;
+}
+.mobile-ui .gc-marquee span {
+    font-size: 0.8rem;
+    margin-right: 30px;
+}
+
+.mobile-ui .gc-buy-layout, .mobile-ui .gc-redeem-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.mobile-ui .gc-steps {
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.mobile-ui .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}

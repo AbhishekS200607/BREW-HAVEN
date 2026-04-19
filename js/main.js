@@ -17,10 +17,10 @@ const sideLabelName = document.querySelector('#sideLabel h4');
 const sideLabelPrice = document.querySelector('#sideLabel .price');
 
 const productData = {
-  'hero-frapp.png': { name: 'ICED CARAMEL LATTE', price: '$5.40' },
-  'menu-mocha.png': { name: 'MOCHA FRAPPUCCINO', price: '$6.20' },
-  'menu-vanilla.png': { name: 'VANILLA BEAN CREAM', price: '$5.80' },
-  'menu-hazelnut.png': { name: 'HAZELNUT COLD BREW', price: '$5.50' }
+  'hero-frapp.png': { name: 'ICED CARAMEL LATTE', price: '₹540.00' },
+  'menu-mocha.png': { name: 'MOCHA FRAPPUCCINO', price: '₹620.00' },
+  'menu-vanilla.png': { name: 'VANILLA BEAN CREAM', price: '₹580.00' },
+  'menu-hazelnut.png': { name: 'HAZELNUT COLD BREW', price: '₹550.00' }
 };
 
 thumbs.forEach(thumb => {
@@ -43,7 +43,7 @@ thumbs.forEach(thumb => {
       const filename = fullSrc.split('/').pop();
       heroImg.src = fullSrc;
 
-      const data = productData[filename] || { name: 'PREMIUM COFFEE', price: '$4.50' };
+      const data = productData[filename] || { name: 'PREMIUM COFFEE', price: '₹450.00' };
       
       // Update Side Label
       if(sideLabelName) {
@@ -67,6 +67,20 @@ thumbs.forEach(thumb => {
     }, 400);
   });
 });
+
+// ===== CAROUSEL NAVIGATION =====
+const carouselItems = document.querySelector('.carousel-items');
+const prevBtn = document.querySelector('.carousel-nav.prev');
+const nextBtn = document.querySelector('.carousel-nav.next');
+
+if (carouselItems && prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    carouselItems.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    carouselItems.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+}
 
 // ===== MAGNETIC BUTTONS =====
 const magnets = document.querySelectorAll('.order-btn, .card-btn, .add-btn');
