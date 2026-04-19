@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu | Brew Haven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    /* SHARED */
+    .menu-hero { padding: 180px 0 40px; text-align: center; background: linear-gradient(to bottom, #011f18, #000f0c); }
+    .menu-hero h1 { font-family: var(--font-serif); font-size: 5rem; margin-bottom: 10px; }
+    
+    .view-switcher { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+    .view-btn { padding: 10px 25px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--gray); cursor: pointer; font-weight: 600; font-size: 0.8rem; transition: 0.3s; }
+    .view-btn.active { background: var(--white); color: var(--dark-bg); border-color: var(--white); }
+
+    .menu-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px; }
+    .menu-cat-title { font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold); margin: 60px 0 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+    
+    /* GRID VIEW STYLES */
+    .grid-view-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+    .grid-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; text-align: center; transition: 0.3s; }
+    .grid-card img { width: 180px; margin: 0 auto 20px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3)); }
+    .grid-card h4 { font-size: 1.1rem; margin-bottom: 10px; }
+    .grid-card p { font-size: 0.85rem; color: var(--gray); margin-bottom: 20px; min-height: 3em; }
+
+    /* SLIDE VIEW STYLES (Hero Mode) */
+    #slideViewContainer { display: none; width: 100vw; margin-left: calc(-50vw + 50%); position: relative; overflow: hidden; }
+    .slider-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .slider-track::-webkit-scrollbar { display: none; }
+    
+    .slide-item { 
+      flex: 0 0 100vw; 
+      height: 80vh; 
+      scroll-snap-align: start; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 100px; 
+      padding: 0 15%; 
+    }
+    .slide-content { max-width: 450px; text-align: left; }
+    .slide-content h4 { font-size: 4rem; font-family: var(--font-serif); line-height: 1.1; margin-bottom: 20px; }
+    .slide-content p { font-size: 1.1rem; color: var(--gray); margin-bottom: 30px; }
+    .slide-image img { width: 450px; height: 500px; object-fit: contain; filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6)); }
+
+    /* SHARED UI */
+    .price { font-weight: 800; color: var(--gold); font-size: 1.5rem; display: block; margin-bottom: 20px; }
+    .order-btn { padding: 15px 45px; background: var(--accent-green); border: none; border-radius: 50px; color: white; font-weight: 700; cursor: pointer; transition: 0.3s; }
+    .order-btn:hover { background: var(--white); color: var(--dark-bg); transform: scale(1.05); }
+
+    @media (max-width: 1024px) {
+      .slide-item { flex-direction: column; text-align: center; gap: 40px; height: auto; padding: 100px 20px; }
+      .slide-content { text-align: center; }
+      .slide-image img { width: 300px; height: 350px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="nav-container container">
+      <div class="logo">
+        <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+          <img src="assets/logo-bh.png" alt="Brew Haven Logo" style="width: 40px;">
+          <div class="logo-text-group">
+            <span class="logo-main">BREW</span>
+            <span class="logo-sub">HAVEN</span>
+          </div>
+        </a>
+      </div>
+      <nav class="nav-pill">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="active-pill"><a href="menu.html">Menu</a></li>
+          <li><a href="rewards.html">Rewards</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="header-icons">
+          <a href="#" class="icon-btn"><img src="https://img.icons8.com/material-outlined/24/ffffff/user.png" alt="User"></a>
+          <a href="#" class="icon-btn"><img src="https://img.icons8.com/material-outlined/24/ffffff/shopping-bag.png" alt="Cart"></a>
+        </div>
+        <button class="hamburger" id="menuTrigger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="menu-hero">
+    <div class="container">
+      <h1>OUR MENU</h1>
+      <div class="view-switcher">
+        <button class="view-btn active" id="gridBtn">GRID VIEW</button>
+        <button class="view-btn" id="slideBtn">SLIDE VIEW</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID VIEW -->
+  <div class="menu-container" id="gridViewContainer">
+    <h2 class="menu-cat-title">SIGNATURE DRINKS</h2>
+    <div class="grid-view-grid">
+      <div class="grid-card">
+        <img src="assets/quality-cup.png" alt="Black Coffee">
+        <h4>Classic Black</h4>
+        <p>Pure, hand-roasted artisan coffee for the true coffee purist.</p>
+        <span class="price">$4.50</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+      <div class="grid-card">
+        <img src="assets/menu-caramel.png" alt="Caramel Latte">
+        <h4>Caramel Latte</h4>
+        <p>A classic blend of rich espresso and velvety steamed milk with caramel drizzle.</p>
+        <span class="price">$5.40</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+      <div class="grid-card">
+        <img src="assets/menu-mocha.png" alt="Mocha Frapp">
+        <h4>Mocha Frappuccino</h4>
+        <p>Rich chocolate and coffee blended with ice, topped with whipped cream.</p>
+        <span class="price">$6.20</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+      <div class="grid-card">
+        <img src="assets/menu-vanilla.png" alt="Vanilla Bean">
+        <h4>Vanilla Bean Cream</h4>
+        <p>A smooth and creamy caffeine-free favorite made with real vanilla bean.</p>
+        <span class="price">$5.80</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+      <div class="grid-card">
+        <img src="assets/menu-hazelnut.png" alt="Hazelnut Brew">
+        <h4>Hazelnut Cold Brew</h4>
+        <p>Slow-steeped cold brew with a nutty hazelnut finish and silky foam.</p>
+        <span class="price">$5.50</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+      <div class="grid-card">
+        <img src="assets/pop-caramel.png" alt="White Mocha">
+        <h4>White Mocha</h4>
+        <p>White chocolate sauce and espresso with steamed milk and cream.</p>
+        <span class="price">$5.90</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+    </div>
+
+    <h2 class="menu-cat-title">ARTISAN FOOD</h2>
+    <div class="grid-view-grid">
+      <div class="grid-card">
+        <img src="assets/pop-mocha.png" alt="Croissant">
+        <h4>Butter Croissant</h4>
+        <p>Flaky, golden-brown pastry made with 100% French butter.</p>
+        <span class="price">$3.50</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+      <div class="grid-card">
+        <img src="assets/pop-vanilla.png" alt="Blueberry Muffin">
+        <h4>Blueberry Muffin</h4>
+        <p>Bursting with fresh blueberries and topped with a sugar crumble.</p>
+        <span class="price">$4.20</span>
+        <button class="order-btn">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE VIEW -->
+  <div id="slideViewContainer">
+    <div class="slider-track">
+      <!-- Item 1: Black Coffee -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>Classic<br>Black</h4>
+          <p>Pure, hand-roasted artisan coffee for the true coffee purist.</p>
+          <span class="price">$4.50</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/quality-cup.png" alt="Drink"></div>
+      </div>
+      <!-- Item 2: Caramel Latte -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>Caramel<br>Latte</h4>
+          <p>A classic blend of rich espresso and velvety steamed milk with sweet caramel drizzle.</p>
+          <span class="price">$5.40</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/menu-caramel.png" alt="Drink"></div>
+      </div>
+      <!-- Item 3: Mocha Frapp -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>Mocha<br>Frappuccino</h4>
+          <p>Rich chocolate and coffee blended with ice, topped with whipped cream.</p>
+          <span class="price">$6.20</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/menu-mocha.png" alt="Drink"></div>
+      </div>
+      <!-- Item 4: Vanilla Bean -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>Vanilla Bean<br>Cream</h4>
+          <p>A smooth and creamy caffeine-free favorite made with real vanilla bean.</p>
+          <span class="price">$5.80</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/menu-vanilla.png" alt="Drink"></div>
+      </div>
+      <!-- Item 5: Hazelnut Cold Brew -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>Hazelnut<br>Cold Brew</h4>
+          <p>Slow-steeped cold brew with a nutty hazelnut finish and silky foam.</p>
+          <span class="price">$5.50</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/menu-hazelnut.png" alt="Drink"></div>
+      </div>
+      <!-- Item 6: White Mocha -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>White<br>Mocha</h4>
+          <p>White chocolate sauce and espresso with steamed milk and cream.</p>
+          <span class="price">$5.90</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/pop-caramel.png" alt="Drink"></div>
+      </div>
+      <!-- Item 7: Croissant -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>Butter<br>Croissant</h4>
+          <p>Flaky, golden-brown pastry made with 100% French butter.</p>
+          <span class="price">$3.50</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/pop-mocha.png" alt="Food"></div>
+      </div>
+      <!-- Item 8: Muffin -->
+      <div class="slide-item">
+        <div class="slide-content">
+          <h4>Blueberry<br>Muffin</h4>
+          <p>Bursting with fresh blueberries and topped with a sugar crumble.</p>
+          <span class="price">$4.20</span>
+          <button class="order-btn">ORDER NOW</button>
+        </div>
+        <div class="slide-image"><img src="assets/pop-vanilla.png" alt="Food"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="contact-box">
+          <h3>CONTACT US</h3>
+          <form class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit" class="submit-btn">SUBMIT</button>
+          </form>
+        </div>
+        <div class="newsletter-box">
+          <h3>STAY IN THE LOOP</h3>
+          <p>Get exclusive offers & updates.</p>
+          <div class="subscribe-input">
+            <input type="email" placeholder="Enter Your Email">
+            <button class="arrow-btn">→</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="brand-info">
+          <img src="assets/footer-brand-lockup.png" alt="Logo Lockup" style="height: 60px; width: auto;">
+          <div class="socials" style="display: flex; gap: 15px; margin-top: 20px;">
+            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+          </div>
+        </div>
+        <div class="rewards">
+          <strong>REWARDS</strong>
+          <span>Earn points & get rewarded.</span>
+          <a href="rewards.html" class="join-btn">JOIN REWARDS</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© 2024 Brew Haven. All Rights Reserved.</span>
+        <div class="links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const gridView = document.getElementById('gridViewContainer');
+    const slideView = document.getElementById('slideViewContainer');
+    const gridBtn = document.getElementById('gridBtn');
+    const slideBtn = document.getElementById('slideBtn');
+
+    gridBtn.addEventListener('click', () => {
+      gridView.style.display = 'block';
+      slideView.style.display = 'none';
+      gridBtn.parentElement.querySelector('.active').classList.remove('active');
+      gridBtn.classList.add('active');
+      window.scrollTo(0,0);
+    });
+
+    slideBtn.addEventListener('click', () => {
+      gridView.style.display = 'none';
+      slideView.style.display = 'block';
+      slideBtn.parentElement.querySelector('.active').classList.remove('active');
+      slideBtn.classList.add('active');
+      window.scrollTo(0,0);
+    });
+  </script>
+</body>
+</html>

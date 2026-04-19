@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Haven | Gift Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/gift-cards.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="nav-container container">
+      <div class="logo">
+        <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+          <img src="assets/logo-bh.png" alt="Brew Haven Logo" style="width: 40px;">
+          <div class="logo-text-group">
+            <span class="logo-main">BREW</span>
+            <span class="logo-sub">HAVEN</span>
+          </div>
+        </a>
+      </div>
+      <nav class="nav-pill">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="rewards.html">Rewards</a></li>
+          <li class="active-pill"><a href="gift-cards.html">Gift Cards</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="header-icons">
+          <a href="#" class="icon-btn"><img src="https://img.icons8.com/material-outlined/24/ffffff/user.png" alt="User"></a>
+          <a href="#" class="icon-btn"><img src="https://img.icons8.com/material-outlined/24/ffffff/shopping-bag.png" alt="Cart"></a>
+        </div>
+        <button class="hamburger" id="menuTrigger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="gc-hero">
+    <div class="gc-hero-bg"></div>
+    <div class="container gc-hero-inner">
+      <div class="gc-hero-text">
+        <span class="gc-eyebrow">THE PERFECT GIFT</span>
+        <h1 class="gc-title">GIVE THE GIFT<br>OF <span class="gc-title-accent">GREAT COFFEE.</span></h1>
+        <p class="gc-subtitle">For every occasion. For every coffee lover. Redeemable in-store and online.</p>
+        <div class="gc-hero-btns">
+          <a href="#buy" class="gc-btn-primary">BUY A GIFT CARD</a>
+          <a href="#redeem" class="gc-btn-ghost">REDEEM A CARD</a>
+        </div>
+      </div>
+      <div class="gc-hero-cards">
+        <div class="gc-card-preview gc-card-gold">
+          <div class="gc-card-logo">BREW HAVEN</div>
+          <div class="gc-card-amount">$50</div>
+          <div class="gc-card-tag">GIFT CARD</div>
+          <div class="gc-card-shine"></div>
+        </div>
+        <div class="gc-card-preview gc-card-green">
+          <div class="gc-card-logo">BREW HAVEN</div>
+          <div class="gc-card-amount">$25</div>
+          <div class="gc-card-tag">GIFT CARD</div>
+          <div class="gc-card-shine"></div>
+        </div>
+        <div class="gc-card-preview gc-card-dark">
+          <div class="gc-card-logo">BREW HAVEN</div>
+          <div class="gc-card-amount">$100</div>
+          <div class="gc-card-tag">GIFT CARD</div>
+          <div class="gc-card-shine"></div>
+        </div>
+      </div>
+    </div>
+    <div class="gc-marquee-wrap">
+      <div class="gc-marquee">
+        <span>BREW HAVEN GIFT CARDS</span><span>·</span>
+        <span>BREW HAVEN GIFT CARDS</span><span>·</span>
+        <span>BREW HAVEN GIFT CARDS</span><span>·</span>
+        <span>BREW HAVEN GIFT CARDS</span><span>·</span>
+        <span>BREW HAVEN GIFT CARDS</span><span>·</span>
+        <span>BREW HAVEN GIFT CARDS</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUY SECTION -->
+  <section class="gc-buy" id="buy">
+    <div class="container">
+      <div class="gc-section-header">
+        <span class="tagline">CHOOSE YOUR AMOUNT</span>
+        <h2 class="title">BUY A GIFT CARD</h2>
+      </div>
+      <div class="gc-buy-layout">
+        <div class="gc-selector">
+          <p class="gc-selector-label">SELECT AMOUNT</p>
+          <div class="gc-amounts">
+            <button class="gc-amount-btn">$10</button>
+            <button class="gc-amount-btn active">$25</button>
+            <button class="gc-amount-btn">$50</button>
+            <button class="gc-amount-btn">$75</button>
+            <button class="gc-amount-btn">$100</button>
+            <button class="gc-amount-btn">$150</button>
+          </div>
+          <p class="gc-selector-label" style="margin-top:30px;">OR ENTER CUSTOM AMOUNT</p>
+          <div class="gc-custom-input"><span>$</span><input type="number" placeholder="Enter amount" min="5" max="500"></div>
+          <p class="gc-selector-label" style="margin-top:30px;">DELIVERY METHOD</p>
+          <div class="gc-delivery-opts">
+            <label class="gc-delivery-opt active"><input type="radio" name="delivery" checked><div class="gc-opt-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>Email Delivery</span></div></label>
+            <label class="gc-delivery-opt"><input type="radio" name="delivery"><div class="gc-opt-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg><span>Print at Home</span></div></label>
+          </div>
+        </div>
+        <div class="gc-form">
+          <p class="gc-selector-label">PERSONALISE YOUR CARD</p>
+          <div class="gc-form-grid">
+            <div class="gc-field"><label>Recipient Name</label><input type="text" placeholder="e.g. Sarah"></div>
+            <div class="gc-field"><label>Recipient Email</label><input type="email" placeholder="sarah@email.com"></div>
+            <div class="gc-field"><label>Your Name</label><input type="text" placeholder="From..."></div>
+            <div class="gc-field"><label>Delivery Date</label><input type="date"></div>
+            <div class="gc-field gc-field-full"><label>Personal Message (optional)</label><textarea placeholder="Write a heartfelt message..."></textarea></div>
+          </div>
+          <div class="gc-live-preview">
+            <p class="gc-selector-label">CARD PREVIEW</p>
+            <div class="gc-preview-card gc-card-gold">
+              <div class="gc-card-logo">BREW HAVEN</div>
+              <div class="gc-card-amount" id="previewAmount">$25</div>
+              <div class="gc-card-tag">GIFT CARD</div>
+              <div class="gc-preview-to">To: <span id="previewName">Sarah</span></div>
+              <div class="gc-card-shine"></div>
+            </div>
+          </div>
+          <button class="gc-checkout-btn">ADD TO CART — $25</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="contact-box">
+          <h3>CONTACT US</h3>
+          <form class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit" class="submit-btn">SUBMIT</button>
+          </form>
+        </div>
+        <div class="newsletter-box">
+          <h3>STAY IN THE LOOP</h3>
+          <p>Get exclusive offers & updates.</p>
+          <div class="subscribe-input">
+            <input type="email" placeholder="Enter Your Email">
+            <button class="arrow-btn">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="brand-info">
+          <img src="assets/footer-brand-lockup.png" alt="Logo Lockup" style="height: 60px; width: auto;">
+          <div class="socials" style="display: flex; gap: 15px; margin-top: 20px;">
+            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+          </div>
+        </div>
+        <div class="rewards">
+          <strong>REWARDS</strong>
+          <span>Earn points & get rewarded.</span>
+          <a href="rewards.html" class="join-btn">JOIN REWARDS</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© 2024 Brew Haven. All Rights Reserved.</span>
+        <div class="links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/gift-cards.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
